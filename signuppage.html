@@ -1,0 +1,184 @@
+<html>
+<head>
+    <title> Sign up form. </title>
+    <style>
+        .container{
+           margin: auto;
+           width: 450px;
+           height: 720px;
+           max-width: 90%;
+       }
+       .container form{
+           width: 70%;
+           height: 50%;
+           padding: 20px;
+           background:rgb(137, 203, 229);
+           border-radius: 4px;
+           box-shadow: 0 8px 16px rgba(0,0,0,.3);
+       }
+       body{
+           background-image: url("https://lingy.pro/wp-content/uploads/2020/12/lejek_sprzedazowy.jpg");
+           background-repeat: no-repeat;
+           background-attachment: fixed; 
+           background-size: 100% 100%;
+           font-family: sans-serif;   
+       }
+       .container form .submit{
+           margin-left: 100%;
+           width: 90px;
+           height: 34px;
+           background:green;
+           border: none;
+           outline: none;
+           cursor:pointer;
+           font-size: 16px;
+           text-transform: uppercase;
+           color: white;
+           border-radius: 10px;
+       }  
+   </style>
+</head>
+<body>
+    <div class="container" style="position:absolute; top: 135px; right: 380px;">
+        <form onsubmit=" return validateForm1();" action="Cat.html" >
+            <table>
+                <h3> CREATE ACCOUNT </h3>
+                <tr>
+                    <td> Firstname: </td>
+                    <td> <input type="text" placeholder="enter firstname here" name="firstname" id="firstname"> </td>
+                </tr>
+                <tr>
+                    <td> Lastname: </td>
+                    <td> <input type="text" placeholder="enter lastname here" name="lastname" id="lastname"> </td>
+                </tr>
+                <tr>
+                    <td> Username: </td>
+                    <td> <input type="text" placeholder="enter username here" name="username" id="username"> </td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td> <input type="password" placeholder="enter password here" name="password" id="password"> </td>
+                </tr>
+                <tr>
+                    <td> Email: </td>
+                    <td> <input type="email" placeholder="enter email here" name="email" id="email"> </td>
+                </tr>
+                <tr>
+                    <td> Gender: </td>
+                    <td>
+                        <input type="radio" name="gender" id="genderMale"> Male
+                        <input type="radio" name="gender" id="genderFemale"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td> DOB: </td>
+                    <td>
+                        <select id="dobDay">
+                            <option>31</option>
+                            <option>30</option>
+                            <!-- Remaining options -->
+                        </select>
+                        <select id="dobMonth">
+                            <option>01</option>
+                            <option>02</option>
+                            <!-- Remaining options -->
+                        </select>
+                        <select id="dobYear">
+                            <option>1990</option>
+                            <option>1991</option>
+                            <!-- Remaining options -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Phone no: </td>
+                    <td> <input type="number" placeholder="enter phone no here" name="phone" id="phonenumber"> </td>
+                </tr>
+                <tr>
+                    <td> <input type="submit" class="submit" value="create"> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function validateForm1() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phonenumber").value;
+            
+            if (firstname === "") {
+                alert("Please enter your first name.");
+                return false;
+            }
+
+            if (lastname === "") {
+                alert("Please enter your last name.");
+                return false;
+            }
+
+            if (username === "") {
+                alert("Please enter your username.");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return false;
+            }
+
+            var genderMale = document.getElementById("genderMale");
+            var genderFemale = document.getElementById("genderFemale");
+            if (!genderMale.checked && !genderFemale.checked) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            var dobDay = document.getElementById("dobDay").value;
+            var dobMonth = document.getElementById("dobMonth").value;
+            var dobYear = document.getElementById("dobYear").value;
+            if (dobDay === "" || dobMonth === "" || dobYear === "") {
+                alert("Please enter your complete date of birth.");
+                return false;
+            }
+
+            if (phone === "") {
+                alert("Please enter your phone number.");
+                return false;
+            }
+
+            var numberPattern = /^\d+$/;
+            var alphabetPattern = /^[a-zA-Z]+$/;
+            
+            if (numberPattern.test(firstname)) {
+                alert("First name cannot contain numbers.");
+                return false;
+            }
+
+            if (numberPattern.test(lastname)) {
+                alert("Last name cannot contain numbers.");
+                return false;
+            }
+
+            if (numberPattern.test(username)) {
+                alert("Username cannot contain numbers.");
+                return false;
+            }
+
+            if (alphabetPattern.test(phone)) {
+                alert("Mobile number can only contain numbers.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+

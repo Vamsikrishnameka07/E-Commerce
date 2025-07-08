@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIZE ALTERATION</title>
+   
+       <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #a1e2ee;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #dde3a3;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4aa849;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .measurement-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #measurement-image {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+        }
+    </style>
+    
+    
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            var form = event.target;
+            var gender = form.gender.value;
+            var shoulder = form.Shoulder.value;
+            var waist = form.waist.value;
+            var height = form.Height.value;
+            var chest = form.chest.value;
+
+            if (gender === 'men') {
+                if (!shoulder || !waist || !height || !chest) {
+                    alert('Please fill in all the measurements for Men.');
+                    return;
+                }
+            }
+
+            var confirmationMessage = "Confirmation:\n\nGender: " + gender +
+                "\nShoulder length: " + shoulder +
+                "\nWaist: " + waist +
+                "\nHeight length: " + height +
+                "\nChest: " + chest;
+
+            alert(confirmationMessage);
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>SIZE ALTERATION</h1>
+        <form action="payment.html" method="post" onsubmit="return handleSubmit(event)">
+             <label for="gender">Gender:</label>
+            <select id="gender" name="gender" placeholder="default">
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="kids">Kids</option>
+            </select>
+
+            <h2>Measurements</h2>
+
+            <label for="Shoulder">Shoulder length:</label>
+            <input type="number" id="Shoulder" name="Shoulder" placeholder="IN INCHES">
+
+            <label for="waist">Waist:</label>
+            <input type="number" id="waist" name="waist"  placeholder="IN INCHES">
+
+            <label for="Height">Height length:</label>
+            <input type="number" id="Height" name="Height"  placeholder="IN INCHES">
+
+            <label for="chest">Chest:</label>
+            <input type="number" id="chest" name="chest"  placeholder="IN INCHES">
+
+            <label for="thigh">thigh:</label>
+            <input type="number" id="thigh" name="thigh"  placeholder="IN INCHES">
+
+            <div class="measurement-image">
+                <h3>How to Measure</h3>
+                <img src="https://www.bossini.com.sg/wp-content/uploads/2020/04/size-men-en.jpg" alt="Measurement Instructions" id="measurement-image">
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        var genderSelect = document.getElementById("gender");
+        var measurementImage = document.getElementById("measurement-image");
+    
+        genderSelect.addEventListener("change", function() {
+            var selectedGender = this.value;
+           
+    
+            switch (selectedGender) {
+                case "men":
+                   imageSrc = "https://www.bossini.com.sg/wp-content/uploads/2020/04/size-men-en.jpg";
+                    break;
+                case "women":
+                    imageSrc = "https://i.etsystatic.com/24311431/r/il/fd1f8a/2488041708/il_794xN.2488041708_14q7.jpg";
+                    break;
+                case "kids":
+                    imageSrc = "https://s3.amazonaws.com/lee262online.hk/Sellyippee/product/HKB08-size-kids-en.jpg";
+                    break;
+                
+            }
+    
+            measurementImage.src = imageSrc;
+        });
+    </script>
+    <script>
+      function handleSubmit(event) {
+            event.preventDefault();
+            var form = event.target;
+            var gender = form.gender.value;
+            var shoulder = form.Shoulder.value;
+            var waist = form.waist.value;
+            var height = form.Height.value;
+            var chest = form.chest.value;
+            var thigh = form.thigh.value;
+
+            if (gender === 'men') {
+                if (!shoulder || !waist || !height || !chest || !thigh) {
+                    alert('Please fill in all the measurements.');
+                    return;
+                }
+            }
+            if (gender === 'women') {
+                if (!shoulder || !waist || !height || !chest || !thigh) {
+                    alert('Please fill in all the measurements.');
+                    return;
+                }
+            }
+            if (gender === 'kids') {
+                if (!shoulder || !waist || !height || !chest || !thigh) {
+                    alert('Please fill in all the measurements.');
+                    return;
+                }
+            }
+
+            var confirmationMessage = "Confirmation:\n\nGender: " + gender +
+                "\nShoulder length: " + shoulder +
+                "\nWaist: " + waist +
+                "\nHeight length: " + height +
+                "\nChest: " + chest;
+
+            alert(confirmationMessage);
+            form.submit();
+        }
+    </script>
+</body>
+</html>

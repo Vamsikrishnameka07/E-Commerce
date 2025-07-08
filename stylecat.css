@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: black;
+    padding: 0 100px
+}
+
+h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+    
+}
+
+h6{
+    color: blanchedalmond;
+}
+
+button{
+    font-size: 0.8rem;
+    font-weight: 700;
+    outline:black;
+    border: dimgrey;
+    background-color: hotpink;
+    color: black;
+    padding: 13px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition:0.3s ease;
+}
+
+button:hover{
+    background-color: blanchedalmond;
+}
+
+hr{
+    width: 30px;
+    height: 2px;
+    background-color: hotpink;
+}
+
+.navbar{
+    font-size: 16px;
+    top: 0;
+    left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    padding: 0 20px;
+    color:black;
+    transition: 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active{
+    color: hotpink;
+}
+
+/*Mobile Nav*/
+
+.navbar-light .navbar-toggler{
+    border: hotpink;
+    outline: none;
+    color: black;
+}
+
+#bar{
+    font-size: 1.5rem;
+    padding: 7px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+    color: black;
+}
+
+#bar:hover,
+#bar.active{
+    color: black;
+}
+
+@media only screen and (max-width:991px){
+    body > nav > div > button:hover,
+    body > nav > div > button:focus{
+        background-color: hotpink;
+    }
+
+    body > nav > div > button:hover #bar,
+    body > nav > div > button:focus #bar{
+        background-color: hotpink;
+    }
+
+    #navbarSupportedContent > ul{
+        margin: 1rem;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    #navbarSupportedContent>ul>li:nth-child(n)>a{
+        padding: 10px 0;
+    }
+}
+
+
+/*HOME*/
+
+
+#home{
+    background-image: url("https://64.media.tumblr.com/d56ccea2aecd69d4e01d9759d9f01652/5bae101b9b27d9e1-a6/s1280x1920/88d9264ddd225cacc2ffaa9ea62baac258e396ee.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: top 60px left 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home span{
+    color: hotpink;
+}
+
+#new .one img{
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#new .one .details{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+#new .one:hover .details{
+    cursor: pointer;
+    background-color:rgba(228, 178, 178,0.7);
+}
+
+#new .one .details button{
+    display: inline;
+    font-size: 14px;
+    font-weight: 500;
+    color:deeppink;
+    background: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding: 2.5px;
+    transform: translateY(70px);
+    transition: 0.3s ease;
+}
+
+#new .one .details button:hover{
+    color:blanchedalmond;
+    border-bottom: 1px solid hotpink;
+}
+
+/*Category*/
+
+.cat {
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.cat img{
+    transition: 0.3s all;
+}
+
+.cat:hover img{
+    opacity: 0.7;
+}
+
+.cat .cat-button{
+    background: hotpink;
+    transform: translateY(20px);
+    opacity: 0;
+    transform: 0.3s all;
+}
+
+.cat:hover .cat-button{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#banner{
+    background-image: url("https://wallpaperaccess.com/full/3478222.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: top 60px left 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer{
+    background-color: black;
+}
+
+footer h5{
+    color: hotpink;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer li{
+    padding-bottom: 4px;
+}
+
+footer li a{
+    font-size: 0.8rem;
+    color:lavenderblush;
+}
+
+footer li a:hover{
+    color: lightblue;
+}
+
+footer p{
+    color: lightcyan;
+    font-size: 0.8rem;
+}
+
+
+ 
+
